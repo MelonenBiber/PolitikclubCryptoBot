@@ -1,0 +1,2 @@
+# PolitikclubCryptoBot
+./gradlew run
