@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 
 group 'de.melonenbiber'
@@ -36,4 +37,10 @@ task run(type: JavaExec) {
     description = "Run the program"
     classpath = sourceSets.main.getRuntimeClasspath()
     main = 'de.melonenbiber.PolitikclubCryptoBot'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.melonenbiber.PolitikclubCryptoBot'
+    }
 }
