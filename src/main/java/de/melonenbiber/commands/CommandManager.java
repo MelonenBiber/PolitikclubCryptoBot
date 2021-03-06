@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +29,7 @@ public class CommandManager implements EventListener
             User author = ((MessageReceivedEvent) genericEvent).getAuthor();
 
             // Is Message from the bot himself
-            if(author.getId().equals(PolitikclubCryptoBot.jda.getSelfUser().getId()))
+            if (author.getId().equals(PolitikclubCryptoBot.jda.getSelfUser().getId()))
                 return;
 
             Message message = ((MessageReceivedEvent) genericEvent).getMessage();
@@ -46,6 +47,8 @@ public class CommandManager implements EventListener
             // Copy Text from Message as array, except first element/word
             // !price bitcoin usd --> '!price' wont be copied
             System.arraycopy(messageContentArray, 1, args, 0, args.length);
+            // Convert all elements to lowercase
+            args = Arrays.stream(args).map(String::toLowerCase).toArray(String[]::new);
 
             boolean executedCommand = false;
             for (CommandBase command : commands)
@@ -74,6 +77,6 @@ public class CommandManager implements EventListener
             for (String currentAlias : command.aliases)
                 if (currentAlias.equalsIgnoreCase(alias))
                     return Optional.of(command);
-       return Optional.empty();
+        return Optional.empty();
     }
 }
