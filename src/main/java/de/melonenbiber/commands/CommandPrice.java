@@ -8,9 +8,9 @@ import de.melonenbiber.utils.Cryptocurrency;
 
 import java.util.Random;
 
-public class CommandCheckPrice extends CommandBase
+public class CommandPrice extends CommandBase
 {
-    public CommandCheckPrice(String name, String[] aliases, int minArgs, int maxArgs)
+    public CommandPrice(String name, String[] aliases, int minArgs, int maxArgs)
     {
         super(name, aliases, minArgs, maxArgs);
         helpMessage = "!price <coin> [currency]\nExample: !price bitcoin usd";
