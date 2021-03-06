@@ -7,7 +7,7 @@
 
 ### How to deploy
 **1.** ./gradlew shadowJar <br>
-**1.** Get the jar from build/libs <br>
-**2.** Create a file named "discord_token" in the same folder your jar is <br>
-**3.** java -jar _PolitikclubCryptoBot...-all.jar_ <br>
-**4.** Profit! <br>
+**2.** Get the jar from build/libs <br>
+**3.** Create a file named "discord_token" in the same folder your jar is <br>
+**4.** java -jar _PolitikclubCryptoBot...-all.jar_ <br>
+**5.** Profit! <br>
