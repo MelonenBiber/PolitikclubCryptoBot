@@ -23,7 +23,9 @@ public class PolitikclubCryptoBot
 
         try
         {
-            String discordToken = Files.readString(Path.of("discord_token"));
+            String discordToken = Files.readAllLines(Path.of("discord_token")).get(0);
+            System.out.print(discordToken);
+            System.out.println(discordToken.length());
             jda = JDABuilder.createDefault(discordToken)
                     .addEventListeners(commandManager)
                     .build();
