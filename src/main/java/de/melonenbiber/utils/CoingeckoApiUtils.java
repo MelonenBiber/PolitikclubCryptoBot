@@ -1,6 +1,7 @@
 package de.melonenbiber.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
@@ -10,14 +11,33 @@ import org.apache.hc.core5.http.HttpHeaders;
 import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 public class CoingeckoApiUtils
 {
     private static final String coingeckoUri = "https://api.coingecko.com/api/v3/";
     private static final Gson gson = new Gson();
+    private static  List<SimpleCryptocurrency> everySimpleCryptocurrency;
+
+    static
+    {
+        try
+        {
+            everySimpleCryptocurrency = new Gson().fromJson(
+                    new FileReader("coins.json"),
+                    new TypeToken<List<SimpleCryptocurrency>>()
+                    {
+                    }.getType());
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
     public static Cryptocurrency getCryptocurrency(String currency) throws ApiCallException
     {
@@ -67,5 +87,10 @@ public class CoingeckoApiUtils
         }
 
         return responseContent;
+    }
+
+    public static List<SimpleCryptocurrency> getAllSimpleCryptocurrencies()
+    {
+        return everySimpleCryptocurrency;
     }
 }
