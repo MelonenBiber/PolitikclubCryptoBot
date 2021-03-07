@@ -2,11 +2,8 @@ package de.melonenbiber.utils;
 
 import java.util.Map;
 
-public class Cryptocurrency
+public class Cryptocurrency extends SimpleCryptocurrency
 {
-    public String id;
-    public String symbol;
-    public String name;
     public int market_cap_rank;
     public int coingecko_rank;
     //public List<NameValuePair> ath;
@@ -57,8 +54,6 @@ public class Cryptocurrency
         public double total_supply;
         public double max_supply;
         public double circulating_supply;
-
-
     }
 
     public class Description
