@@ -50,19 +50,12 @@ public class CommandManager implements EventListener
             // Convert all elements to lowercase
             args = Arrays.stream(args).map(String::toLowerCase).toArray(String[]::new);
 
-            boolean executedCommand = false;
             for (CommandBase command : commands)
                 for (String alias : command.aliases)
                     if (alias.equalsIgnoreCase(commandName))
-                    {
-                        executedCommand = true;
                         // Check for arg length so you don't have to in every call of every command.execute()
                         if ((args.length < command.minArgs || args.length > command.maxArgs) || !command.execute(args, author, channel))
                             channel.sendMessage("Try '!help " + commandName + "'").queue();
-                    }
-
-            if (!executedCommand)
-                channel.sendMessage("Could not find '!" + commandName + "'.\nType !help to see a list of available commands!").queue();
         }
     }
 
