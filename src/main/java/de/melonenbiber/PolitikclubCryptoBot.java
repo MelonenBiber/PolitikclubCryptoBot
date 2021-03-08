@@ -1,8 +1,6 @@
 package de.melonenbiber;
 
-import de.melonenbiber.commands.CommandPrice;
-import de.melonenbiber.commands.CommandHelp;
-import de.melonenbiber.commands.CommandManager;
+import de.melonenbiber.commands.*;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
@@ -20,6 +18,8 @@ public class PolitikclubCryptoBot
     {
         commandManager.addCommand(new CommandPrice("price", new String[0], 1, 2));
         commandManager.addCommand(new CommandHelp("help", new String[0], 0, 1));
+        commandManager.addCommand(new CommandAllTimeHigh("alltimehigh", new String[]{"ath"}, 1, 2));
+        commandManager.addCommand(new CommandAllTimeLow("alltimelow", new String[]{"atl"}, 1, 2));
 
         try
         {
