@@ -29,7 +29,7 @@ public class CommandPrice extends CommandBase
 
         if (optionalCryptoCurrencyName.isEmpty())
         {
-            channel.sendMessage("Unknown cryptocurrency '" + args[0] + "'").queue();
+            channel.sendMessage("Unknown cryptocurrency '" + cryptoCurrencyName + "'").queue();
             return true;
         }
 
