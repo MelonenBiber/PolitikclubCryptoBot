@@ -18,7 +18,6 @@ import java.util.Optional;
 public class CommandManager implements EventListener
 {
     // String that marks the beginning of the command
-    public final String ACTIVATOR = "!";
     public List<CommandBase> commands = new ArrayList<>();
 
     @Override
@@ -38,10 +37,10 @@ public class CommandManager implements EventListener
 
             String[] messageContentArray = messageContentRaw.split(" ");
 
-            if (!StringUtils.startsWith(messageContentArray[0], ACTIVATOR))
+            if (!StringUtils.startsWith(messageContentArray[0], CommandBase.ACTIVATOR))
                 return;
 
-            String commandName = messageContentArray[0].replaceFirst(ACTIVATOR, "");
+            String commandName = messageContentArray[0].replaceFirst(CommandBase.ACTIVATOR, "");
             String[] args = new String[messageContentArray.length - 1];
 
             // Copy Text from Message as array, except first element/word

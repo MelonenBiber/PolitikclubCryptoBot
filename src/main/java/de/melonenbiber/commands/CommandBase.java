@@ -9,6 +9,8 @@ import java.util.List;
 
 public abstract class CommandBase
 {
+    public static final String ACTIVATOR = "!";
+
     public String helpMessage;
     public String name;
     public List<String> aliases;

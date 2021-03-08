@@ -14,7 +14,7 @@ public class CommandAllTimeLow extends CommandBase
     public CommandAllTimeLow(String name, String[] aliases, int minArgs, int maxArgs)
     {
         super(name, aliases, minArgs, maxArgs);
-        helpMessage = "!(alltimelow|atl) <coin> [currency]\nExample: !atl btc eur";
+        helpMessage = ACTIVATOR + "(alltimelow|atl) <coin> [currency]\nExample: " + ACTIVATOR + "atl btc eur";
     }
 
     @Override

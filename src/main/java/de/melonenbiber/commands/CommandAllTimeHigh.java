@@ -14,7 +14,7 @@ public class CommandAllTimeHigh extends CommandBase
     public CommandAllTimeHigh(String name, String[] aliases, int minArgs, int maxArgs)
     {
         super(name, aliases, minArgs, maxArgs);
-        helpMessage = "!(alltimehigh|ath) <coin> [currency]\nExample: !ath btc eur";
+        helpMessage = ACTIVATOR + "(alltimehigh|ath) <coin> [currency]\nExample: " + ACTIVATOR + "ath btc eur";
     }
 
     @Override

@@ -15,7 +15,7 @@ public class CommandPrice extends CommandBase
     public CommandPrice(String name, String[] aliases, int minArgs, int maxArgs)
     {
         super(name, aliases, minArgs, maxArgs);
-        helpMessage = "!price <coin> [currency]\nExample: !price bitcoin usd";
+        helpMessage = ACTIVATOR + "price <coin> [currency]\nExample: " + ACTIVATOR +"price bitcoin usd";
     }
 
     @Override

@@ -11,7 +11,7 @@ public class CommandHelp extends CommandBase
     public CommandHelp(String name, String[] aliases, int minArgs, int maxArgs)
     {
         super(name, aliases, minArgs, maxArgs);
-        helpMessage = "!help [command]";
+        helpMessage = ACTIVATOR + "help [command]";
     }
 
     @Override
